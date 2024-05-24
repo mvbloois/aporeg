@@ -14,7 +14,7 @@ date_text <- html |>
 date <- regmatches(date_text, regexpr("\\d{2}-\\d{2}-\\d{4}", date_text))
 date <- as.Date(date, format = "%d-%m-%Y")
   
-if (Sys.Date() >= date) {
+if (Sys.Date() == date) {
   url <- "https://www.igj.nl/binaries/igj/documenten/publicaties/2017/08/17/register-van-gevestigde-apothekers/Apothekersregister.csv"
   
   df <- read.csv2(url)
