@@ -1,5 +1,12 @@
-- name: Send mail
+name: test mail
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  mailing:
   uses: dawidd6/action-send-mail@v3
+
   with:
     # Specify connection via URL (replaces server_address, server_port, secure,
     # username and password)
