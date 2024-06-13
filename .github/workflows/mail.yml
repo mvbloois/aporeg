@@ -10,22 +10,22 @@ jobs:
       - uses: dawidd6/action-send-mail@v3
 
         with:
-        connection_url: ${{secrets.MAIL_CONNECTION}}
-        subject: Github Actions job result
-        to: martijn.vanbloois@farminform.nl
-        from: Martijn van Bloois # <user@example.com>
-        body: Build job of ${{github.repository}} completed successfully!
-        html_body: file://README.html
+          connection_url: ${{secrets.MAIL_CONNECTION}}
+          subject: Github Actions job result
+          to: martijn.vanbloois@farminform.nl
+          from: Martijn van Bloois # <user@example.com>
+          body: Build job of ${{github.repository}} completed successfully!
+          html_body: file://README.html
     # Optional carbon copy recipients:
     #cc: 
     # Optional blind carbon copy recipients:
     #bcc: r2d2@example.com,hansolo@example.com
-        reply_to: martijn.vanbloois@farminform.nl
-        in_reply_to: <martijn.vanbloois@farminform.nl>
-        ignore_cert: true
-        convert_markdown: true
-        attachments: git.diff
-        priority: low
-        nodemailerlog: false
-        nodemailerdebug: false
+          reply_to: martijn.vanbloois@farminform.nl
+          in_reply_to: <martijn.vanbloois@farminform.nl>
+          ignore_cert: true
+          convert_markdown: true
+          attachments: git.diff
+          priority: low
+          nodemailerlog: false
+          nodemailerdebug: false
     
