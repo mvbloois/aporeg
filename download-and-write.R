@@ -1,5 +1,5 @@
 
-url <- "https://www.igj.nl/zorgsectoren/eerstelijnszorg/publicaties/publicaties/2017/08/17/register-van-gevestigde-apothekers"
+url <- "https://www.igj.nl/site/binaries/site-content/collections/documents/2017/08/17/register-van-gevestigde-apothekers/apothekersregister.csv"
 
 # read the html
 html <- rvest::read_html(url)
