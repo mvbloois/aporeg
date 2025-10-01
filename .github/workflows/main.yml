@@ -30,7 +30,7 @@ jobs:
           R -e 'install.packages("rvest")'
 
       - name: Run script
-        run: Rscript save-the-day.R
+        run: Rscript download-and-write.R
 
       - name: Commit files
         run: |
