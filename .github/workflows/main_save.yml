@@ -25,7 +25,7 @@ jobs:
 
       - name: Install packages
         run: |
-          R -e 'install.packages("rvest")'
+          R -e 'install.packages("rvest", "dplyr", "tidyr")'
 
       - name: Run script
         run: Rscript save-the-day.R
