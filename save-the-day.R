@@ -3,7 +3,7 @@ library(tidyr)
 
 date <- "2024-06-27"
 
-url <- "https://www.igj.nl/binaries/igj/documenten/publicaties/2017/08/17/register-van-gevestigde-apothekers/Apothekersregister_.csv"
+url <- "https://www.igj.nl/site/binaries/site-content/collections/documents/2017/08/17/register-van-gevestigde-apothekers/apothekersregister.csv"
 
 col_names <- c("KvKnr", "Officiëlenaam", "Adresbezoek", "Postcode", "Plaats", "Typerelatie", "BIGregistratienr", "Vrl", "Tussenvg.", "Achternaam")
 
