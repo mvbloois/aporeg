@@ -1,24 +1,19 @@
+today <- format(Sys.Date(), "%Y%m%d")
+today <- "20251009"
+url <- paste0("https://www.igj.nl/site/binaries/site-content/collections/documents/2017/08/17//register-van-gevestigde-apothekers/apothekersregister", today, ".csv")
 
-url <- "https://www.igj.nl/site/binaries/site-content/collections/documents/2017/08/17/register-van-gevestigde-apothekers/apothekersregister.csv"
-
-# read the html
-html <- rvest::read_html(url)
-
-# extract the date after publicatiedatum
-date_text <- html |> 
-  rvest::html_nodes("p:contains('Publicatie')") |> 
-  rvest::html_text() |>
-  tail(1) 
-
-# Use base R functions to extract the date
-date <- regmatches(date_text, regexpr("\\d{2}-\\d{2}-\\d{4}", date_text))
-date <- as.Date(date, format = "%d-%m-%Y")
+response <- tryCatch({
+  con <- url(url, "rb")
+  close(con)
+  TRUE
+  }, error = function(e) {
+    FALSE
+})
   
-if (Sys.Date() == date) {
-  url <- "https://www.igj.nl/site/binaries/site-content/collections/documents/2017/08/17/register-van-gevestigde-apothekers/apothekersregister.csv"
-  
-  df <- read.csv2(url)
-  
-  write.csv2(df, "./most-recent/apothekersregister.csv", row.names = FALSE)
-  write.csv2(df, paste0("./history/apothekersregister_", date, ".csv"), row.names = FALSE)
+if (!response) {
+  stop("URL is not accessible or does not exist")
 }
+
+df <- read.csv2(url)
+write.csv2(df, "./most-recent/apothekersregister.csv", row.names = FALSE)
+write.csv2(df, paste0("./history/apothekersregister_", date, ".csv"), row.names = FALSE)
