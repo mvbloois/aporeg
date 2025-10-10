@@ -16,4 +16,4 @@ if (!response) {
 
 df <- read.csv2(url)
 write.csv2(df, "./most-recent/apothekersregister.csv", row.names = FALSE)
-write.csv2(df, paste0("./history/apothekersregister_", date, ".csv"), row.names = FALSE)
+write.csv2(df, paste0("./history/apothekersregister_", today, ".csv"), row.names = FALSE)
