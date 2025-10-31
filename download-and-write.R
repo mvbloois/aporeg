@@ -1,5 +1,5 @@
 today <- format(Sys.Date(), "%Y%m%d")
-today <- "20251009"
+
 url <- paste0("https://www.igj.nl/site/binaries/site-content/collections/documents/2017/08/17//register-van-gevestigde-apothekers/apothekersregister", today, ".csv")
 
 response <- tryCatch({
